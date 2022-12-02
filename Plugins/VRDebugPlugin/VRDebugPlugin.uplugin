@@ -1,0 +1,31 @@
+{
+	"FileVersion": 3,
+	"Version": 0,
+	"VersionName": "1.7.2",
+	"FriendlyName": "VR Debug Plugin",
+	"Description": "The VR Debug Plugin allows for easy VR debugging at runtime without the need for keyboard and mouse.",
+	"Category": "Developer",
+	"CreatedBy": "DownToCode",
+	"CreatedByURL": "",
+	"DocsURL": "https://www.downtocode.com/vrdebugplugin",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/9f6a7a87237b4f538e566391df2a778f",
+	"SupportURL": "https://discord.gg/cueDj9",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "VRDebugPlugin",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Android"
+			]
+		},
+		{
+			"Name": "VRDebugPluginEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}
