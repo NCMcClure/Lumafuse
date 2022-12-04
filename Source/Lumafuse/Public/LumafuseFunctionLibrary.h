@@ -21,4 +21,17 @@ class LUMAFUSE_API ULumafuseFunctionLibrary : public UBlueprintFunctionLibrary
 	
 	UFUNCTION(BlueprintCallable, Category = "Lumafuse|Physics")
 	static void SetAxisConstraintMode(UPrimitiveComponent* Primitive, bool LockPositionX, bool LockPositionY, bool LockPositionZ, bool LockRotationX, bool LockRotationY, bool LockRotationZ);
+
+	UFUNCTION(BlueprintCallable, Category = "Lumafuse|Math")
+	static float GetArraySumFloat(TArray<float> FloatArray);
+	
+	UFUNCTION(BlueprintCallable, Category = "Lumafuse|Math")
+	static float GetMeanAverage(TArray<float> FloatArray);
+
+	UFUNCTION(BlueprintCallable, Category = "Lumafuse|Math")
+	static float GetVariance(TArray<float> FloatArray);	
+
+	UFUNCTION(BlueprintCallable, Category = "Lumafuse|Math")
+	static float GetStandardDeviation(TArray<float> FloatArray);
+
 };

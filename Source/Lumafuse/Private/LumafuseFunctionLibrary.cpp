@@ -30,3 +30,60 @@ void ULumafuseFunctionLibrary::SetAxisConstraintMode(UPrimitiveComponent* Primit
 	Primitive->GetBodyInstance()->bLockZRotation = LockRotationZ;
 	
 }
+
+float ULumafuseFunctionLibrary::GetArraySumFloat(TArray<float> FloatArray)
+{
+	float TempFloat = 0;
+
+	for (auto TargetFloat : FloatArray)
+	{
+		TempFloat = TempFloat + TargetFloat;
+	}
+
+	return TempFloat;
+}
+
+float ULumafuseFunctionLibrary::GetMeanAverage(TArray<float> FloatArray)
+{
+	float TempFloat = 0;
+
+	for (auto TargetFloat : FloatArray)
+	{
+		TempFloat = TempFloat + TargetFloat; 
+	}
+
+	TempFloat = TempFloat / FloatArray.Num();
+
+	return TempFloat;
+}
+
+float ULumafuseFunctionLibrary::GetVariance(TArray<float> FloatArray)
+{
+	float TempFloat = 0;
+	float const Average = GetMeanAverage(FloatArray);
+	TArray<float> SumOfDifferences;
+
+	for (auto TargetFloat : FloatArray)
+	{
+		SumOfDifferences.Add(TargetFloat - Average);
+	}
+
+	TArray<float> SquaredDifferences;
+
+	for (auto TargetFloat : SumOfDifferences)
+	{
+		SquaredDifferences.Add(pow(TargetFloat, 2));
+	}
+
+	TempFloat = GetArraySumFloat(SquaredDifferences);
+	TempFloat = TempFloat / (SquaredDifferences.Num() - 1);
+
+	return  TempFloat;
+}
+
+float ULumafuseFunctionLibrary::GetStandardDeviation(TArray<float> FloatArray)
+{
+	float TempFloat = 0;
+	TempFloat = sqrt(GetVariance(FloatArray));
+	return TempFloat;
+}
