@@ -34,4 +34,7 @@ class LUMAFUSE_API ULumafuseFunctionLibrary : public UBlueprintFunctionLibrary
 	UFUNCTION(BlueprintCallable, Category = "Lumafuse|Math")
 	static float GetStandardDeviation(TArray<float> FloatArray);
 
+	UFUNCTION(BlueprintCallable, Category = "Lumafuse|Math")
+	static float GetMedian(TArray<float> FloatArray);
+
 };

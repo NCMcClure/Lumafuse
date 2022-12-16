@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{D5688FF5-433F-6528-C39A-739116698655}",
+	"EngineAssociation": "{ABEA2828-4E2D-6121-B2E0-B386652C7551}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -9,7 +9,8 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
-				"Engine"
+				"Engine",
+				"UMG"
 			]
 		}
 	],
@@ -25,11 +26,6 @@
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/5d4ddd5493ce4d2295ef9be6c67eff82"
 		},
 		{
-			"Name": "BackgroundBlurWithMask",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/595231118c4e43508f006da5eed02bbd"
-		},
-		{
 			"Name": "VRDebugPlugin",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/9f6a7a87237b4f538e566391df2a778f"
@@ -42,6 +38,10 @@
 				"Win64",
 				"Android"
 			]
+		},
+		{
+			"Name": "MultiTask2",
+			"Enabled": true
 		}
 	],
 	"TargetPlatforms": [

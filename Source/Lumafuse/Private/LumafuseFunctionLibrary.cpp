@@ -87,3 +87,20 @@ float ULumafuseFunctionLibrary::GetStandardDeviation(TArray<float> FloatArray)
 	TempFloat = sqrt(GetVariance(FloatArray));
 	return TempFloat;
 }
+
+//Write a function that takes in a float array and returns the median value
+float ULumafuseFunctionLibrary::GetMedian(TArray<float> FloatArray)
+{
+	float TempFloat = 0;
+	FloatArray.Sort();
+	if (FloatArray.Num() % 2 == 0)
+	{
+		TempFloat = (FloatArray[FloatArray.Num() / 2] + FloatArray[(FloatArray.Num() / 2) - 1]) / 2;
+	}
+	else
+	{
+		TempFloat = FloatArray[FloatArray.Num() / 2];
+	}
+	return TempFloat;
+}
+

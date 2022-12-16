@@ -8,7 +8,7 @@ public class Lumafuse : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "PhysicsCore", "OculusMovement" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "PhysicsCore", "OculusMovement", "LowEntryExtendedStandardLibrary" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
