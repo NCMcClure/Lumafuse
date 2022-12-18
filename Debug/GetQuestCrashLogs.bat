@@ -1,2 +1,2 @@
-adb pull /sdcard/UE4Game/AlfaBrew/AlfaBrew/Saved/Logs/AlfaBrew.log
-adb logcat -d > AlfaBrewLogCat.log
+adb pull /sdcard/UE4Game/Lumafuse/Lumafuse/Saved/Logs/Lumafuse.log
+adb logcat -d > LumafuseLogCat.log

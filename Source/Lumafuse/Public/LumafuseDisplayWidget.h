@@ -3,7 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "LumaFuseBufferBlock.h"
+#include "LumafuseBufferBlock.h"
+#include "LumafuseBufferBlockPayload.h"
+#include "LumafuseFrameBuffer.h"
+#include "Components/Image.h"
 #include "Blueprint/UserWidget.h"
 #include "LowEntryExtendedStandardLibrary/Public/Classes/LowEntryExtendedStandardLibrary.h"
 #include "LumafuseDisplayWidget.generated.h"
@@ -18,16 +21,11 @@ class LUMAFUSE_API ULumafuseDisplayWidget : public UUserWidget
 
 	virtual void NativeOnInitialized() override;
 	
-	
-	struct FBufferBlock
-	{
-		TArray<uint8> Buffer;
-		bool ConstructionComplete;
-	};
+	static void FoldPacketIntoFrameBufferBlock(TArray<uint8>& Packet, TMap<int32, FLumafuseBufferBlockPayload>& SortedBufferBlock, int32 NumberOfBlockPackets, bool& BlockCompleted);
 
 	UFUNCTION(BlueprintCallable, Category = "Lumafuse | Display Rendering")
-	static void SortPacketIntoFrameBlockBuffer(TArray<uint8>& Packet, TMap<int32, FLumaFuseBufferBlock>& SortedBufferBlock, int32 NumberOfBlockPackets, bool& BlockCompleted);
-	
-	void TryRenderFrame(TArray<uint8>& Packet);
+	void TryRenderFrame(UPARAM(ref)TArray<uint8>& Packet, UPARAM(ref)TMap<uint8, FLumafuseFrameBuffer>& FrameQueue, UPARAM(ref)TMap<FIntPoint, UTexture2D*>& TextureBlocks);
+
+	void ConvertBufferBlockToTexture(TMap<int32, FLumafuseBufferBlockPayload>& SortedBufferBlock, UTexture2D* TextureBlock);
 
 };
